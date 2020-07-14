@@ -23467,6 +23467,9 @@ MonoBehaviour:
   jumpForce: 15
   gravityMultiplier: 3
   jumpMultiplier: 0.5
+  canMove: 1
+  canFlip: 1
+  canJump: 1
 --- !u!61 &2079165282
 BoxCollider2D:
   m_ObjectHideFlags: 0
