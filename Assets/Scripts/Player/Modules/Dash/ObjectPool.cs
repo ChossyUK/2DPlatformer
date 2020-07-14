@@ -7,13 +7,10 @@ public class ObjectPool : MonoBehaviour
     #region Variables
     // The game object we want to pool
     [SerializeField] GameObject prefab;
-
     // The number of game objects we want to pool
     [SerializeField] int maxPooledObjects = 10;
-
     // A queue to store the pooled objects in
     Queue<GameObject> pooledObjects = new Queue<GameObject>();
-
     // Static instance of the object pool so the after image effect can get it
     public static ObjectPool Instance { get; private set; }
     #endregion
@@ -23,7 +20,6 @@ public class ObjectPool : MonoBehaviour
     {
         // Set the static instance
         Instance = this;
-
         // Create the object pool
         CreatePool();
     }
@@ -37,10 +33,8 @@ public class ObjectPool : MonoBehaviour
         {
             // Create the object
             GameObject pooledItem = Instantiate(prefab);
-
             // Set it's position
             pooledItem.transform.SetParent(transform);
-
             // Add to object pool
             AddToPool(pooledItem);
         }
@@ -50,7 +44,6 @@ public class ObjectPool : MonoBehaviour
     {
         // Set the game object to be inactive
         gameObject.SetActive(false);
-
         // Add it to the queue
         pooledObjects.Enqueue(gameObject);
     }
@@ -63,10 +56,8 @@ public class ObjectPool : MonoBehaviour
 
         // Get the pooled object
         GameObject pooledItem = pooledObjects.Dequeue();
-
         // Set the game object to be active
         pooledItem.SetActive(true);
-
         // Return the pooled object
         return pooledItem;
     }

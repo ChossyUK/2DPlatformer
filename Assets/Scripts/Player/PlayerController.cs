@@ -68,6 +68,8 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
     Vector2 movement;
     // Reference to the new control scheme
     Controls controls;
+    // Reference to the dash script
+    Dash dash;
     #endregion
 
     #region Unity Base Methods
@@ -97,6 +99,9 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
         coll = GetComponent<Collisions>();
         // Get the rigidbody the script is attached to
         rb = GetComponent<Rigidbody2D>();
+        // Get the dash component
+        dash = GetComponent<Dash>();
+
         // Set the gravity scale
         rb.gravityScale = gravityMultiplier;
     }
@@ -208,7 +213,12 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
 
     public void OnDash(InputAction.CallbackContext context)
     {
-       
+        // Check if button pressed
+        if (context.performed)
+        {
+            // Start dashing
+            dash.StartDash();
+        }
     }
 
     public void OnWallGrab(InputAction.CallbackContext context)
