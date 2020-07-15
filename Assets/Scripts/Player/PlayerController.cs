@@ -70,6 +70,9 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
     Controls controls;
     // Reference to the dash script
     Dash dash;
+
+    // Reference to the wall climb script
+    WallClimb wallClimb;
     #endregion
 
     #region Unity Base Methods
@@ -101,6 +104,8 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
         rb = GetComponent<Rigidbody2D>();
         // Get the dash component
         dash = GetComponent<Dash>();
+        // Get the wall climb component
+        wallClimb = GetComponent<WallClimb>();
 
         // Set the gravity scale
         rb.gravityScale = gravityMultiplier;
@@ -223,7 +228,19 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
 
     public void OnWallGrab(InputAction.CallbackContext context)
     {
-        
+        // Check if button pressed
+        if (context.performed)
+        {
+            // Start wall grab
+            wallClimb.wallGrab = true;
+        }
+
+        // Check if button released
+        if (context.canceled)
+        {
+            // Stop wall grab
+            wallClimb.wallGrab = false;
+        }
     }
     #endregion
 }
