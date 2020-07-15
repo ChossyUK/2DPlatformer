@@ -14171,9 +14171,7 @@ CompositeCollider2D:
   m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 1044449068}
-    m_ColliderPaths: []
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths: []
   m_VertexDistance: 0.0005
@@ -14970,65 +14968,7 @@ CompositeCollider2D:
   m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 1567285508}
-    m_ColliderPaths:
-    - - X: -192850000
-        Y: 70000000
-      - X: 142100000
-        Y: 70000000
-      - X: 142100000
-        Y: -70000000
-      - X: 152250000
-        Y: -70000000
-      - X: 152250000
-        Y: 80000000
-      - X: -203000000
-        Y: 80000000
-      - X: -203000000
-        Y: -70000000
-      - X: -192850000
-        Y: -70000000
-    - - X: -101499900
-        Y: -70000041
-      - X: -101499900
-        Y: 20000041
-      - X: -101499959
-        Y: 20000100
-      - X: -152250041
-        Y: 20000100
-      - X: -152250100
-        Y: 20000041
-      - X: -152250100
-        Y: -70000041
-      - X: -152250041
-        Y: -70000100
-      - X: -101499959
-        Y: -70000100
-    - - X: 101500100
-        Y: -70000041
-      - X: 101500100
-        Y: 19999959
-      - X: 101500041
-        Y: 19999900
-      - X: 50749959
-        Y: 19999900
-      - X: 50749900
-        Y: 19999959
-      - X: 50749900
-        Y: -70000041
-      - X: 50749959
-        Y: -70000100
-      - X: 101500041
-        Y: -70000100
-    - - X: 172549984
-        Y: -110000000
-      - X: -223300000
-        Y: -110000000
-      - X: -223300000
-        Y: -120000000
-      - X: 172549984
-        Y: -120000000
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: -19.285028, y: -7}
@@ -16946,7 +16886,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1569162416
 Transform:
   m_ObjectHideFlags: 0
@@ -17185,6 +17125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1961854307}
   - component: {fileID: 1961854308}
+  - component: {fileID: 1961854309}
   m_Layer: 0
   m_Name: TempPlayer
   m_TagString: Untagged
@@ -17256,6 +17197,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1961854309
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961854306}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ae0c4cefc34b1de42ab609a6cb552cd7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1976464420
 GameObject:
   m_ObjectHideFlags: 0
@@ -24283,6 +24243,7 @@ GameObject:
   - component: {fileID: 2079165283}
   - component: {fileID: 2079165282}
   - component: {fileID: 2079165281}
+  - component: {fileID: 2079165287}
   - component: {fileID: 2079165280}
   - component: {fileID: 2079165279}
   - component: {fileID: 2079165285}
@@ -24449,10 +24410,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallClimbSpeed: 3
   xOffset: 1
-  yOffset: 2
+  yOffset: 1.25
   deadZone: 0.2
   wallGrab: 0
   disableLedgeGrab: 0
+--- !u!114 &2079165287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079165278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b25a3cc615bcd04eaae2d1f4e57a938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
 --- !u!1 &2113507065
 GameObject:
   m_ObjectHideFlags: 0

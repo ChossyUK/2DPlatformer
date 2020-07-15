@@ -136,6 +136,13 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
             doubleJumped = false;
         }
 
+        // Check if we are touching a wall
+        if (coll.IsTouchingWall)
+        {
+            // Reset the is jumping bool
+            isJumping = false;
+        }
+
         // Flip the player according to direction
         if (!facingRight && x > 0.1f || facingRight && x < -0.1f)
         {
