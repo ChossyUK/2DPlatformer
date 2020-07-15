@@ -15,7 +15,7 @@ public class AnimationStateMachine : MonoBehaviour
     Animator animator;
     PlayerController playerController;
     WallClimb wallClimb;
-    //WallSlide wallSlide;
+    WallSlide wallSlide;
     //WallJump wallJump;
     Dash dash;
     //LedgeGrab ledgeGrab;
@@ -27,7 +27,7 @@ public class AnimationStateMachine : MonoBehaviour
         // Get the components
         animator = GetComponentInChildren<Animator>();
         playerController = GetComponent<PlayerController>();
-        //wallSlide = GetComponent<WallSlide>();
+        wallSlide = GetComponent<WallSlide>();
         wallClimb = GetComponent<WallClimb>();
         //wallJump = GetComponent<WallJump>();
         //ledgeGrab = GetComponent<LedgeGrab>();
@@ -75,11 +75,11 @@ public class AnimationStateMachine : MonoBehaviour
             state = AnimationStates.ClimbingWall;
         }
 
-        //// Set state to wall sliding
-        //if (wallSlide.IsWallSliding)
-        //{
-        //    state = AnimationStates.WallSliding;
-        //}
+        // Set state to wall sliding
+        if (wallSlide.IsWallSliding)
+        {
+            state = AnimationStates.WallSliding;
+        }
 
         //// Set state to wall jumping
         //if (wallJump.WallJumped)
