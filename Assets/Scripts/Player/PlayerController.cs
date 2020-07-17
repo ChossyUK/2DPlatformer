@@ -70,9 +70,11 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
     Controls controls;
     // Reference to the dash script
     Dash dash;
-
     // Reference to the wall climb script
     WallClimb wallClimb;
+    // Reference to the wall jump script
+    WallJump wallJump;
+
     #endregion
 
     #region Unity Base Methods
@@ -106,6 +108,8 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
         dash = GetComponent<Dash>();
         // Get the wall climb component
         wallClimb = GetComponent<WallClimb>();
+        // Get the wall jump component
+        wallJump = GetComponent<WallJump>();
 
         // Set the gravity scale
         rb.gravityScale = gravityMultiplier;
@@ -118,8 +122,9 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
 
     void FixedUpdate()
     {
-        // If not wall jumping or ledge grabbing move normally
-        rb.velocity = new Vector2(x * movementSpeed, rb.velocity.y);
+        // If not wall jumping
+        if (!wallJump.WallJumped)
+            rb.velocity = new Vector2(x * movementSpeed, rb.velocity.y);
     }
     #endregion
 
@@ -150,7 +155,6 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
             Flip();
         }
     }
-
 
     public void Flip()
     {
@@ -200,6 +204,13 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
             {
                 Invoke("SetJumpBool", 0.1f);
 
+                // Check for wall jump
+                if (coll.IsTouchingWall && coll.IsTouchingLedge && !coll.IsGrounded && wallClimb.IsWallGrabbing)
+                {
+                    // Do a wall jump
+                    wallJump.DoWallJump();
+                }
+
                 // Jump
                 if (coll.IsGrounded)
                 {
@@ -225,29 +236,20 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
 
     public void OnDash(InputAction.CallbackContext context)
     {
-        // Check if button pressed
+        // Check if button pressed start dashing
         if (context.performed)
-        {
-            // Start dashing
             dash.StartDash();
-        }
     }
 
     public void OnWallGrab(InputAction.CallbackContext context)
     {
-        // Check if button pressed
+        // Check if button pressed start wall grab
         if (context.performed)
-        {
-            // Start wall grab
             wallClimb.wallGrab = true;
-        }
 
-        // Check if button released
+        // Check if button released stop wall grab
         if (context.canceled)
-        {
-            // Stop wall grab
             wallClimb.wallGrab = false;
-        }
     }
     #endregion
 }

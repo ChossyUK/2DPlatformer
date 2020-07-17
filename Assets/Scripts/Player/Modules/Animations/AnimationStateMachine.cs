@@ -49,49 +49,35 @@ public class AnimationStateMachine : MonoBehaviour
     {
         // Set state to idle or walking depending on player input
         if (playerController.X < -0.2f || playerController.X > 0.2f)
-        {
             state = AnimationStates.Walking;
-        }
         else
-        {
             state = AnimationStates.Idle;
-        }
 
         // Set state to jumping
         if (playerController.IsJumping)
-        {
-            state = AnimationStates.Jumping;
-        }
+            state = AnimationStates.Jumping;      
 
         // Set state to wall grabbing
         if (wallClimb.IsWallGrabbing)
-        {
-            state = AnimationStates.WallGrabbing;
-        }
+            state = AnimationStates.WallGrabbing;    
 
         // Set state to wall climbing
         if (wallClimb.IsWallClimbing)
-        {
             state = AnimationStates.ClimbingWall;
-        }
-
+        
         // Set state to wall sliding
         if (wallSlide.IsWallSliding)
-        {
             state = AnimationStates.WallSliding;
-        }
+
 
         //// Set state to wall jumping
         //if (wallJump.WallJumped)
-        //{
         //    state = AnimationStates.WallJumping;
-        //}
 
         //// Set state to ledge grabbing
         //if (ledgeGrab.CanGrabLedge)
-        //{
         //    state = AnimationStates.LedgeGrabbing;
-        //}
+
     }
 
     void PlayStates()

@@ -20,16 +20,12 @@ public class WallSlide : MonoBehaviour
     // Bool to disable wall slide & give control to the ledge grab script
     [HideInInspector]
     public bool disableWallSliding = false;
-
     // Reference to the collisions script
     Collisions coll;
-
     // Reference to the wall climb script
     WallClimb wallClimb;
-
     // Reference to the player controller script
     PlayerController playerController;
-
     // Reference to the rigidbody
     Rigidbody2D rb;
     #endregion
@@ -54,10 +50,7 @@ public class WallSlide : MonoBehaviour
     {
         // Reset wall sliding to false if on the ground
         if (coll.IsGrounded)
-        {
-            // Set wall slide to false
             isWallSliding = false;
-        }
 
         // Check to see if we can wall slide
         if (coll.IsTouchingWall && !coll.IsGrounded)
@@ -65,12 +58,11 @@ public class WallSlide : MonoBehaviour
             // Check if control is enabled
             if (!disableWallSliding)
             {
-                // check for input & we are not wall grabbing
+                // Check for input & we are not wall grabbing
                 if (playerController.X != 0 && !wallClimb.wallGrab)
                 {
                     // Set wall slide to true
                     isWallSliding = true;
-
                     // Do the wall slide
                     DoWallSlide();
                 }
