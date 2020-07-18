@@ -6,7 +6,7 @@ public class AnimationStateMachine : MonoBehaviour
 {
     #region Variables
     // Animation states
-    public enum AnimationStates { Idle, Walking, ClimbingLadder, ClimbingWall, Jumping, Dashing, WallGrabbing, WallJumping, WallSliding, LedgeGrabbing }
+    public enum AnimationStates { Idle, Walking, Climbing, ClimbingWall, Jumping, Dashing, WallGrabbing, WallJumping, WallSliding, LedgeGrabbing }
 
     // Set the default state
     public AnimationStates state = AnimationStates.Idle;
@@ -16,9 +16,9 @@ public class AnimationStateMachine : MonoBehaviour
     PlayerController playerController;
     WallClimb wallClimb;
     WallSlide wallSlide;
-    //WallJump wallJump;
+    WallJump wallJump;
     Dash dash;
-    //LedgeGrab ledgeGrab;
+    LedgeGrab ledgeGrab;
     #endregion
 
     #region Unity Base Methods
@@ -29,8 +29,8 @@ public class AnimationStateMachine : MonoBehaviour
         playerController = GetComponent<PlayerController>();
         wallSlide = GetComponent<WallSlide>();
         wallClimb = GetComponent<WallClimb>();
-        //wallJump = GetComponent<WallJump>();
-        //ledgeGrab = GetComponent<LedgeGrab>();
+        wallJump = GetComponent<WallJump>();
+        ledgeGrab = GetComponent<LedgeGrab>();
         dash = GetComponent<Dash>();
     }
 
@@ -69,14 +69,13 @@ public class AnimationStateMachine : MonoBehaviour
         if (wallSlide.IsWallSliding)
             state = AnimationStates.WallSliding;
 
+        // Set state to wall jumping
+        if (wallJump.WallJumped)
+            state = AnimationStates.WallJumping;
 
-        //// Set state to wall jumping
-        //if (wallJump.WallJumped)
-        //    state = AnimationStates.WallJumping;
-
-        //// Set state to ledge grabbing
-        //if (ledgeGrab.CanGrabLedge)
-        //    state = AnimationStates.LedgeGrabbing;
+        // Set state to ledge grabbing
+        if (ledgeGrab.CanGrabLedge)
+            state = AnimationStates.LedgeGrabbing;
 
     }
 
@@ -90,7 +89,7 @@ public class AnimationStateMachine : MonoBehaviour
             case AnimationStates.Walking:
                 PlayAnimation("Walk");
                 break;
-            case AnimationStates.ClimbingLadder:
+            case AnimationStates.Climbing:
                 PlayAnimation("");
                 break;
             case AnimationStates.ClimbingWall:

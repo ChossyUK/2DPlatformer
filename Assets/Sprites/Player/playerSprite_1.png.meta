@@ -29,6 +29,30 @@ TextureImporter:
   - first:
       213: -3268217691420221213
     second: Idle
+  - first:
+      213: -7391677078675321772
+    second: Ladder1
+  - first:
+      213: 9109300949906802740
+    second: Ladder2
+  - first:
+      213: -7634762317207554195
+    second: Ladder3
+  - first:
+      213: -8514927389755431531
+    second: Ladder4
+  - first:
+      213: -8810664835475190013
+    second: WallClimb1
+  - first:
+      213: 7448480058572200889
+    second: WallClimb2
+  - first:
+      213: 8137731559209867153
+    second: WallClimb3
+  - first:
+      213: -6467073851755956152
+    second: WallClimb4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -141,8 +165,8 @@ TextureImporter:
       name: Run1
       rect:
         serializedVersion: 2
-        x: 10
-        y: 138
+        x: 7
+        y: 224
         width: 17
         height: 30
       alignment: 0
@@ -162,8 +186,8 @@ TextureImporter:
       name: Run2
       rect:
         serializedVersion: 2
-        x: 42
-        y: 138
+        x: 39
+        y: 224
         width: 19
         height: 31
       alignment: 0
@@ -183,9 +207,9 @@ TextureImporter:
       name: Run3
       rect:
         serializedVersion: 2
-        x: 74
-        y: 138
-        width: 18
+        x: 70
+        y: 224
+        width: 19
         height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -204,8 +228,8 @@ TextureImporter:
       name: Run4
       rect:
         serializedVersion: 2
-        x: 106
-        y: 138
+        x: 103
+        y: 224
         width: 17
         height: 30
       alignment: 0
@@ -225,8 +249,8 @@ TextureImporter:
       name: Jump
       rect:
         serializedVersion: 2
-        x: 76
-        y: 74
+        x: 73
+        y: 160
         width: 16
         height: 32
       alignment: 0
@@ -246,12 +270,12 @@ TextureImporter:
       name: Ledge1
       rect:
         serializedVersion: 2
-        x: 9
-        y: 42
+        x: 6
+        y: 128
         width: 18
         height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -267,12 +291,12 @@ TextureImporter:
       name: Ledge2
       rect:
         serializedVersion: 2
-        x: 42
-        y: 43
+        x: 39
+        y: 129
         width: 18
         height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -288,12 +312,12 @@ TextureImporter:
       name: Ledge3
       rect:
         serializedVersion: 2
-        x: 74
-        y: 42
+        x: 71
+        y: 128
         width: 19
         height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -309,12 +333,12 @@ TextureImporter:
       name: Idle
       rect:
         serializedVersion: 2
-        x: 9
-        y: 74
+        x: 6
+        y: 160
         width: 17
         height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -322,6 +346,174 @@ TextureImporter:
       bones: []
       spriteID: 3e0204e4355f4a2d0800000000000000
       internalID: -3268217691420221213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ladder1
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 64
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45c09271cdc7b6990800000000000000
+      internalID: -7391677078675321772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ladder2
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 65
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 438c25763fcba6e70800000000000000
+      internalID: 9109300949906802740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ladder3
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 65
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d673e4a8f10eb0690800000000000000
+      internalID: -7634762317207554195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ladder4
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 64
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 595226d27a6e4d980800000000000000
+      internalID: -8514927389755431531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WallClimb1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 96
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30fc976530b3ab580800000000000000
+      internalID: -8810664835475190013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WallClimb2
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 96
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bbd6c746215e5760800000000000000
+      internalID: 7448480058572200889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WallClimb3
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 96
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1979030dcb70fe070800000000000000
+      internalID: 8137731559209867153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WallClimb4
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 96
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8487ed988965046a0800000000000000
+      internalID: -6467073851755956152
       vertices: []
       indices: 
       edges: []

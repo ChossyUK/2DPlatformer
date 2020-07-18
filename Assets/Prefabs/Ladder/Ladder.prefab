@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8165352999634162995}
   - component: {fileID: 5055070367892495951}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LadderMiddle (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,9 +67,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: -827590293
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a089d2c6db8b03e44944af38a1ce206a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -91,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5824103232894975371}
   - component: {fileID: 840497356643593785}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LadderBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,9 +148,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: -827590293
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f2d03438c67392044a84306a5b814233, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -249,7 +249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3091794213322686137}
   - component: {fileID: 6764306352566691339}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LadderMiddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,9 +306,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: -827590293
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a089d2c6db8b03e44944af38a1ce206a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -330,7 +330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3557460806777006822}
   - component: {fileID: 6454244703015811378}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LadderMiddle (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,9 +387,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: -827590293
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a089d2c6db8b03e44944af38a1ce206a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -411,7 +411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8645503560277495477}
   - component: {fileID: 6303019646102006182}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LadderMiddle (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -468,9 +468,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: -827590293
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a089d2c6db8b03e44944af38a1ce206a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -492,7 +492,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1784992015150909032}
   - component: {fileID: 5791529172679843325}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LadderMiddle (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -549,9 +549,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: -827590293
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a089d2c6db8b03e44944af38a1ce206a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -573,7 +573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1054948451139728896}
   - component: {fileID: 3882559229441210290}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LadderMiddle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -630,9 +630,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: -827590293
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a089d2c6db8b03e44944af38a1ce206a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -721,7 +721,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1251953093149822054}
   - component: {fileID: 4305137253680457197}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LadderMiddle (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -778,9 +778,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: -827590293
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a089d2c6db8b03e44944af38a1ce206a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -802,7 +802,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3415161816326714375}
   - component: {fileID: 1399752242589148759}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LadderTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -859,9 +859,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: -827590293
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8c6ee607a1b550d4aa105019ab790a0c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
