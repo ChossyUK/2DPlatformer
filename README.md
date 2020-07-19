@@ -1,7 +1,7 @@
 # Modular 2D Platform Controller New Input System Unity
 A modular 2D platform controller using the new unity input system.
 <br>
-<br>A modular platform controller that covers these behaviours:
+<br>A modular platform controller that covers these behaviors:
 <br>Variable Jump Height.
 <br>Double Jump.
 <br>Coyote Time.
@@ -10,7 +10,7 @@ A modular 2D platform controller using the new unity input system.
 <br>Wall Climb.
 <br>Wall Slide.
 <br>Ledge Grab.
-<br>Ladders & Climbale Objects.
+<br>Ladders & Climbable Objects.
 <br>Animation State Machine.
 <br>
 <br>It also covers scene frames as a way of creating your scene.
