@@ -77,6 +77,10 @@ public class AnimationStateMachine : MonoBehaviour
         if (ledgeGrab.CanGrabLedge)
             state = AnimationStates.LedgeGrabbing;
 
+        // Set state to climbing
+        if (ClimbableObject.IsClimbing)
+            state = AnimationStates.Climbing;
+
     }
 
     void PlayStates()
@@ -90,7 +94,7 @@ public class AnimationStateMachine : MonoBehaviour
                 PlayAnimation("Walk");
                 break;
             case AnimationStates.Climbing:
-                PlayAnimation("");
+                PlayAnimation("Climbing");
                 break;
             case AnimationStates.ClimbingWall:
                 PlayAnimation("WallClimb");
