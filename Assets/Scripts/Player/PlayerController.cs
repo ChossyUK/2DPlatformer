@@ -46,6 +46,11 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
         get { return isJumping; }
     }
 
+    public bool DoubleJumped
+    {
+        get { return doubleJumped; }
+    }
+
     // Floats for movement direction
     float x, y;
     float facingDirection = 1;
@@ -74,7 +79,8 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
     WallClimb wallClimb;
     // Reference to the wall jump script
     WallJump wallJump;
-
+    // Reference to the coyote time script
+    CoyoteTime coyoteTime;
     #endregion
 
     #region Unity Base Methods
@@ -110,6 +116,8 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
         wallClimb = GetComponent<WallClimb>();
         // Get the wall jump component
         wallJump = GetComponent<WallJump>();
+        // Get the coyote time component
+        coyoteTime = GetComponent<CoyoteTime>();
 
         // Set the gravity scale
         rb.gravityScale = gravityMultiplier;
@@ -227,8 +235,14 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
                     Jump(Vector2.up);
                 }
 
+                // Coyote time jump
+                if (!coll.IsGrounded && coyoteTime.CoyoteTimer > 0)
+                {
+                    Jump(Vector2.up);
+                }
+
                 // Double Jump
-                if (!coll.IsGrounded && !doubleJumped)
+                if (!coll.IsGrounded && !doubleJumped && isJumping && coyoteTime.CoyoteTimer > 0)
                 {
                     Jump(Vector2.up);
                     doubleJumped = true;
