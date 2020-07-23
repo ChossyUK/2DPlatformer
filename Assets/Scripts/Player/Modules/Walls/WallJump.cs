@@ -60,10 +60,12 @@ public class WallJump : MonoBehaviour
     {
         // Disable player movement
         playerController.canMove = false;
+        playerController.disableMovement = true;
         // Wait the alloted time
         yield return new WaitForSeconds(time);
         // Enable player movement
         playerController.canMove = true;
+        playerController.disableMovement = false;
     }
     #endregion
 }

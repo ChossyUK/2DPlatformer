@@ -61,6 +61,8 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
     public bool canFlip = true;
     [HideInInspector]
     public bool canJump = true;
+    [HideInInspector]
+    public bool disableMovement = false;
     bool isJumping = false;
     bool doubleJumped = false;
     bool facingRight = true;
@@ -131,7 +133,7 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
     void FixedUpdate()
     {
         // If not wall jumping
-        if (!wallJump.WallJumped)
+        if (!disableMovement)
             rb.velocity = new Vector2(x * movementSpeed, rb.velocity.y);
     }
     #endregion
@@ -236,7 +238,7 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
                 }
 
                 // Coyote time jump
-                if (!coll.IsGrounded && coyoteTime.CoyoteTimer > 0)
+                if (!coll.IsGrounded && coyoteTime.CoyoteTimer > 0 && !coll.IsTouchingWall)
                 {
                     Jump(Vector2.up);
                 }

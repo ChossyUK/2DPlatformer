@@ -15,6 +15,8 @@ public class ClimbableObject : MonoBehaviour
     [SerializeField] bool isLadder = true;
     // Bool to lock the player to the ladder
     [SerializeField] bool lockToLadder = true;
+    // Array to disable any other climbable objects in the scene
+    [SerializeField] GameObject[] climbableObjects;
 
     // Reference to the player controller script
     PlayerController playerController;
@@ -62,6 +64,17 @@ public class ClimbableObject : MonoBehaviour
         // Get the player by tag
         if (other.tag == "Player")
         {
+
+            // Disable the other climbables
+            if (climbableObjects != null)
+            {
+                foreach (GameObject climbable in climbableObjects)
+                {
+                    climbable.GetComponent<ClimbableObject>().enabled = false;
+                }
+            }
+
+
             // Check if walking past the object or stoped by the object and is on the ground if walking set it so you are not climbing
             if ((playerController.X > 0.1f || playerController.X < -0.1f) && coll.IsGrounded)
             {
@@ -108,6 +121,18 @@ public class ClimbableObject : MonoBehaviour
             // Unlock the rigidbody constraints
             if (lockToLadder)
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+            // Enable the other climbables
+            if (climbableObjects != null)
+            {
+                foreach (GameObject climbable in climbableObjects)
+                {
+                    climbable.GetComponent<ClimbableObject>().enabled = true;
+                }
+            }
+
+            // If not climbing reset the gravity scale
+            rb.gravityScale = playerController.GravityMultiplier;
         }
     }
     #endregion
