@@ -61,8 +61,6 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
     public bool canFlip = true;
     [HideInInspector]
     public bool canJump = true;
-    [HideInInspector]
-    public bool disableMovement = false;
     bool isJumping = false;
     bool doubleJumped = false;
     bool facingRight = true;
@@ -133,7 +131,7 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
     void FixedUpdate()
     {
         // If not wall jumping
-        if (!disableMovement)
+        if (canMove)
             rb.velocity = new Vector2(x * movementSpeed, rb.velocity.y);
     }
     #endregion
