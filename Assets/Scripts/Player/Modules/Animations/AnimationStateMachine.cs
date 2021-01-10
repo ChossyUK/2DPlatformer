@@ -6,7 +6,7 @@ public class AnimationStateMachine : MonoBehaviour
 {
     #region Variables
     // Animation states
-    public enum AnimationStates { Idle, Walking, Climbing, ClimbingWall, Jumping, Dashing, WallGrabbing, WallJumping, WallSliding, LedgeGrabbing }
+    public enum AnimationStates { Idle, Walking, Climbing, ClimbingWall, Falling, Hurt, Jumping, Dashing, WallGrabbing, WallJumping, WallSliding, LedgeGrabbing }
 
     // Set the default state
     public AnimationStates state = AnimationStates.Idle;
@@ -19,6 +19,9 @@ public class AnimationStateMachine : MonoBehaviour
     WallJump wallJump;
     Dash dash;
     LedgeGrab ledgeGrab;
+    BetterJumping betterJumping;
+    Knockback knockBack;
+
     #endregion
 
     #region Unity Base Methods
@@ -32,6 +35,8 @@ public class AnimationStateMachine : MonoBehaviour
         wallJump = GetComponent<WallJump>();
         ledgeGrab = GetComponent<LedgeGrab>();
         dash = GetComponent<Dash>();
+        betterJumping = GetComponent<BetterJumping>();
+        knockBack = GetComponent<Knockback>();
     }
 
     void Update()
@@ -81,6 +86,14 @@ public class AnimationStateMachine : MonoBehaviour
         if (ClimbableObject.IsClimbing)
             state = AnimationStates.Climbing;
 
+        // Set state to falling
+        if (betterJumping.IsFalling)
+            state = AnimationStates.Falling;
+
+        // Set state to hurt
+        if (knockBack.IsHurt)
+            state = AnimationStates.Hurt;
+
     }
 
     void PlayStates()
@@ -100,6 +113,12 @@ public class AnimationStateMachine : MonoBehaviour
                 PlayAnimation("WallClimb");
                 break;
             case AnimationStates.Jumping:
+                PlayAnimation("Jump");
+                break;
+            case AnimationStates.Falling:
+                PlayAnimation("Jump");
+                break;
+            case AnimationStates.Hurt:
                 PlayAnimation("Jump");
                 break;
             case AnimationStates.Dashing:

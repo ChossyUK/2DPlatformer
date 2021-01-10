@@ -24849,6 +24849,7 @@ GameObject:
   - component: {fileID: 2079165291}
   - component: {fileID: 2079165292}
   - component: {fileID: 2079165293}
+  - component: {fileID: 2079165294}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -24893,6 +24894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpFallMultiplier: 6
+  IsFalling: 0
 --- !u!114 &2079165281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25114,7 +25116,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockBackLength: 0.35
-  knockBackForce: 15
+  knockBackForce: 10
+--- !u!114 &2079165294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079165278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6ceb9d23e8cad44cb4595104be4647e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxFallHeight: 10
+  damageAmt: 10
 --- !u!1 &2130910289
 GameObject:
   m_ObjectHideFlags: 0

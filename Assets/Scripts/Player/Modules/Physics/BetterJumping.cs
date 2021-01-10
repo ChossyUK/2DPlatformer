@@ -6,6 +6,7 @@ public class BetterJumping : MonoBehaviour
     // Float value to increase the ridgidbody by
     [SerializeField] float jumpFallMultiplier;
 
+    public bool IsFalling;
     // Reference to the rigidbody
     Rigidbody2D rb;
     #endregion
@@ -24,6 +25,12 @@ public class BetterJumping : MonoBehaviour
         {
             // Increase the gravity when falling to shorten the jump arc
             rb.velocity += Vector2.up * Physics2D.gravity.y * jumpFallMultiplier * Time.deltaTime;
+
+            IsFalling = true;
+        }
+        else
+        {
+            IsFalling = false;
         }
     }
     #endregion
