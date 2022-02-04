@@ -65,6 +65,12 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
     bool doubleJumped = false;
     bool facingRight = true;
 
+    [HideInInspector]
+    public bool IsClimbing = false;
+
+    [HideInInspector]
+    public bool HorizontalClimbing = false;
+
     // Reference to the collisions script
     Collisions coll;
     // Reference to the rigidbody
@@ -81,6 +87,11 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
     WallJump wallJump;
     // Reference to the coyote time script
     CoyoteTime coyoteTime;
+
+    // Reference to the better jumping script
+    BetterJumping betterJumping;
+    // Reference to the slopes script
+    Slopes slopes;
     #endregion
 
     #region Unity Base Methods
@@ -119,6 +130,11 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
         // Get the coyote time component
         coyoteTime = GetComponent<CoyoteTime>();
 
+        // Get the better jumping component
+        betterJumping = GetComponent<BetterJumping>();
+        // Get the slopes component
+        slopes = GetComponent<Slopes>();
+
         // Set the gravity scale
         rb.gravityScale = gravityMultiplier;
     }
@@ -140,23 +156,40 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
     void CheckMovement()
     {
         // Check if we are touching the ground
-        if (coll.IsGrounded)
+        if (coll.IsGrounded && rb.velocity.y < 2)
         {
             // Reset the is jumping bool
             isJumping = false;
-
             // Reset the is double jumping bool
             doubleJumped = false;
+            // Reset the better jumping bool
+            betterJumping.IsFalling = false;
         }
 
         // Check if we are climbing
-        if (ClimbableObject.IsClimbing)
+        if (IsClimbing)
         {
             // Reset the is jumping bool
             isJumping = false;
 
             // Reset the is double jumping bool
             doubleJumped = false;
+
+            // Reset the better jumping bool
+            betterJumping.IsFalling = false;
+        }
+
+        // Check if we are climbing
+        if (HorizontalClimbing)
+        {
+            // Reset the is jumping bool
+            isJumping = false;
+
+            // Reset the is double jumping bool
+            doubleJumped = false;
+
+            // Reset the better jumping bool
+            betterJumping.IsFalling = false;
         }
 
         // Check if we are touching a wall
@@ -164,6 +197,11 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
         {
             // Reset the is jumping bool
             isJumping = false;
+            // Reset the is double jumping bool
+            doubleJumped = false;
+
+            // Reset the better jumping bool
+            betterJumping.IsFalling = false;
         }
 
         // Flip the player according to direction
@@ -233,12 +271,14 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
                 if (coll.IsGrounded)
                 {
                     Jump(Vector2.up);
+                    wallClimb.IsWallClimbing = false;
                 }
 
                 // Coyote time jump
                 if (!coll.IsGrounded && coyoteTime.CoyoteTimer > 0 && !coll.IsTouchingWall)
                 {
                     Jump(Vector2.up);
+                    wallClimb.IsWallClimbing = false;
                 }
 
                 // Double Jump
@@ -246,6 +286,7 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
                 {
                     Jump(Vector2.up);
                     doubleJumped = true;
+                    wallClimb.IsWallClimbing = false;
                 }
             }
 
@@ -261,14 +302,14 @@ public class PlayerController : MonoBehaviour, Controls.IPlayer1Actions
     public void OnDash(InputAction.CallbackContext context)
     {
         // Check if button pressed start dashing
-        if (context.performed)
+        if (context.performed && !betterJumping.IsFalling && !IsClimbing && !HorizontalClimbing)
             dash.StartDash();
     }
 
     public void OnWallGrab(InputAction.CallbackContext context)
     {
         // Check if button pressed start wall grab
-        if (context.performed)
+        if (context.performed && !slopes.OnSlope)
             wallClimb.wallGrab = true;
 
         // Check if button released stop wall grab

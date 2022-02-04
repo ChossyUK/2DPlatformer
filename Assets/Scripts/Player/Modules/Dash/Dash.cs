@@ -54,6 +54,9 @@ public class Dash : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         // Get the playerController component
         playerController = GetComponent<PlayerController>();
+
+        // Get & set the current players move speed
+        activeMoveSpeed = playerController.movementSpeed;
     }
 
     void Update()
@@ -68,8 +71,6 @@ public class Dash : MonoBehaviour
         // Check the dash & cool down timers are below 0
         if (dashCoolDownCounter <= 0 && dashCounter <= 0)
         {
-            // Get & set the current players move speed
-            activeMoveSpeed = playerController.movementSpeed;
             // Set the players movespeed to the dash speed
             playerController.movementSpeed = dashSpeed;
             // Set the dash timer length
@@ -88,12 +89,19 @@ public class Dash : MonoBehaviour
 
     void CheckDash()
     {
-        if (dashCounter > 0)
+        if (dashCounter > 0 && playerController.X != 0)
         {
-            // Take away player control
-            playerController.canMove = false;
             // Set is dashing bool to true
             isDashing = true;
+
+            if (playerController.X == 0)
+            {
+                dashCounter = 0;
+
+                playerController.movementSpeed = activeMoveSpeed;
+                // Set is dashing bool to false
+                isDashing = false;
+            }
 
             // Check & disable better jump
             if (disableBetterJump)
@@ -139,8 +147,6 @@ public class Dash : MonoBehaviour
             // Check if the dash timer is below 0
             if (dashCounter < 0)
             {
-                // Give back player control
-                playerController.canMove = true;
                 // Reset the players movespeed
                 playerController.movementSpeed = activeMoveSpeed;
                 // Start the cool down timer

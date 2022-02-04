@@ -34,6 +34,7 @@ public class WallClimb : MonoBehaviour
     public bool IsWallClimbing
     {
         get { return isWallClimbing; }
+        set { isWallClimbing = value; }
     }
 
     bool isWallClimbing = false;
@@ -120,6 +121,12 @@ public class WallClimb : MonoBehaviour
             isWallClimbing = false;
         }
 
+        if (!coll.IsGrounded && !coll.IsTouchingWall)
+        {
+            isWallGrabbing = false;
+            isWallClimbing = false;
+        }
+
         // Check if we are wall grabbing
         if (wallGrab && !coll.IsGrounded && coll.IsTouchingWall && playerController.canMove)
         {
@@ -134,11 +141,13 @@ public class WallClimb : MonoBehaviour
             {
                 isWallGrabbing = false;
                 isWallClimbing = true;
+                playerController.canJump = false;
             }
             else
             {
                 isWallGrabbing = true;
                 isWallClimbing = false;
+                playerController.canJump = true;
             }
 
             // Move the player via the left sticks Y position

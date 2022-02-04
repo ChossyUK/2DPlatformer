@@ -46,7 +46,7 @@ public class CoyoteTime : MonoBehaviour
             coyoteTimer = coyoteTime;
         }
         // Check if climbing
-        else if (ClimbableObject.IsClimbing)
+        else if (playerController.IsClimbing || playerController.HorizontalClimbing)
         {
             // Set the timer time
             coyoteTimer = coyoteTime;

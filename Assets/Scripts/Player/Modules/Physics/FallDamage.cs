@@ -44,7 +44,7 @@ namespace CedarWoodSoftware
             }
 
             // Stop the damage if player wall grabs or slides
-            if (wallClimb.IsWallGrabbing || wallSlide.IsWallSliding)
+            if (wallClimb.IsWallGrabbing || wallSlide.IsWallSliding || playerController.IsClimbing || playerController.HorizontalClimbing)
                 isFalling = false;
 
             // Check when player hits the ground
